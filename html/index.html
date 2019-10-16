@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script src="index.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="image">
+			<img id="imageToSwap" src="res/favicon.ico" height="128"/>
+		</div>
+		
+		<br/><br/>
 
+		<div id="form_one" class="divSquare">
+			<form>
+				<select id="dlist" onChange="swapImage()">
+					<option value="" selected disabled hidden>Тип ящика</option>
+					<option value="0201">0201</option>
+					<option value="0210">0210</option>
+					<option value="0215">0215</option>
+					<option value="0427">0427</option>
+					<option value="0471">0471</option>
+					<option value="7777">7777</option> 
+				</select>
+				<select id="201" style="display:none">
+					<option value="Whole">Целый</option>
+					<option value="Half">Половина</option>
+				</select>
+				<br/><br/>
+				<input type="text" name="length" id="length" onfocus="this.value=''" pattern="[0-9]+" placeholder="Длина, мм" tabindex="1" style="width: 30%">
+				<input type="text" name="width" id="width" onfocus="this.value=''" pattern="[0-9]+" placeholder="Ширина, мм" tabindex="2" style="width: 30%">
+				<input type="text" name="height" id="height" onfocus="this.value=''" pattern="[0-9]+" placeholder="Высота, мм" tabindex="3" style="width: 30%">
+				<br/><br/>
+				<input type="text" name="thickness" id="thickness" onfocus="this.value=''" pattern="[0-9]+" placeholder="Толщина, мм" tabindex="4" style="width: 30%">
+				<input type="text" name="gluing" id="gluing" onfocus="this.value=''" pattern="[0-9]+" placeholder="Склейка" tabindex="" style="display:none">
+				<input type="text" name="valve" id="valve" onfocus="this.value=''" pattern="[0-9]+" placeholder="Клапан" tabindex="" style="display:none">
+				<br/><br/>
+			</form>
+			<button onclick="sendBoxParams()">Считать</button>
+			<br/>
+		</div>
+		<div id="response_one" class="divSquare reply">
+				<span id="results"></span>
+		</div>
+		<div style='clear:both'></div>
+		<br/><br/>
+		<div id="form_two" class="divSquare">
+			<form>
+				<input type="text" name="hrn" id="sheet_price" onfocus="this.value=''" pattern="[0-9]+" placeholder="Стоимость листа" tabindex="5" style="width: 40%"> <span style="display:inline-block; width: 9%">грн</span>
+				<input type="text" name="boxes_per_sheet" id="boxes_per_sheet" onfocus="this.value=''" pattern="[0-9]+" placeholder="Кол-во ящиков на листе" tabindex="6" style="width: 40%">
+				<br/><br/>
+				<input type="text" name="sheet_size" id="sheet_size" onfocus="this.value=''" pattern="[0-9]+" placeholder="Размер листа, мм" tabindex="7" style="width: 45%">
+				<input type="text" name="carton_type" id="carton_type" onfocus="this.value=''" pattern="[0-9]+" placeholder="Тип картона" tabindex="8" style="width: 45%">
+				<br/><br/>
+			</form>
+			<button onclick="sendSheetParams()">Считать</button>
+			<br/>
+		</div>
+		<div id="response_two" class="divSquare reply">
+			<span id="res2"></span>
+		</div>
+	</body>
+</html>
