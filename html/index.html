@@ -37,7 +37,7 @@
 				<input type="text" name="valve" id="valve" onfocus="this.value=''" pattern="[0-9]+" placeholder="Клапан" tabindex="" style="display:none">
 				<br/><br/>
 			</form>
-			<button onclick="sendBoxParams()">Считать</button>
+			<button id="sendBoxParams" onclick="sendBoxParams()" tabindex="5">Считать</button>
 			<br/>
 		</div>
 		<div id="response_one" class="divSquare reply">
@@ -47,11 +47,11 @@
 		<br/><br/>
 		<div id="form_two" class="divSquare">
 			<form>
-				<input type="text" name="hrn" id="sheet_price" onfocus="this.value=''" pattern="[0-9]+" placeholder="Стоимость листа" tabindex="5" style="width: 40%"> <span style="display:inline-block; width: 9%">грн</span>
-				<input type="text" name="boxes_per_sheet" id="boxes_per_sheet" onfocus="this.value=''" pattern="[0-9]+" placeholder="Кол-во ящиков на листе" tabindex="6" style="width: 40%">
+				<input type="text" name="hrn" id="sheet_price" onfocus="this.value=''" pattern="[0-9]+" placeholder="Стоимость листа" style="width: 40%"> <span style="display:inline-block; width: 9%">грн</span>
+				<input type="text" name="boxes_per_sheet" id="boxes_per_sheet" onfocus="this.value=''" pattern="[0-9]+" placeholder="Кол-во ящиков на листе" style="width: 40%">
 				<br/><br/>
-				<input type="text" name="sheet_size" id="sheet_size" onfocus="this.value=''" pattern="[0-9]+" placeholder="Размер листа, мм" tabindex="7" style="width: 45%">
-				<input type="text" name="carton_type" id="carton_type" onfocus="this.value=''" pattern="[0-9]+" placeholder="Тип картона" tabindex="8" style="width: 45%">
+				<input type="text" name="sheet_size" id="sheet_size" onfocus="this.value=''" pattern="[0-9]+" placeholder="Размер листа, мм" style="width: 45%">
+				<input type="text" name="carton_type" id="carton_type" onfocus="this.value=''" pattern="[0-9]+" placeholder="Тип картона" style="width: 45%">
 				<br/><br/>
 			</form>
 			<button onclick="sendSheetParams()">Считать</button>

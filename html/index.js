@@ -13,15 +13,15 @@ window.onload = function(){
 	document.getElementById("sheet_size").value = "";
 	document.getElementById("carton_type").value = "";
 	//Cycle through input fields on Enter
-	var inputs = document.querySelectorAll('input');
+	var inputs = document.querySelectorAll('input,button');
 	for (var i = 0 ; i < inputs.length; i++) {
 		inputs[i].addEventListener("keypress", function(e){
 			if (e.which == 13) {
-				e.preventDefault();
+				//e.preventDefault();
 				var nextInput = document.querySelectorAll('[tabIndex="' + (this.tabIndex + 1) + '"]');
-				if (nextInput.length === 0) {
+				/*if (nextInput.length === 0) {
 					nextInput = document.querySelectorAll('[tabIndex="1"]');
-				}
+				}*/
 				nextInput[0].focus();
 			}
 		})
@@ -34,6 +34,7 @@ function swapImage(){
 	var hiddenDiv = document.getElementById("201");
 	var hiddenGlue = document.getElementById("gluing");
 	var hiddenValve = document.getElementById("valve");
+	var sendBoxParams_button = document.getElementById("sendBoxParams");
 	var tabSheetPrice = document.getElementById("sheet_price");
 	var tabBoxesPerSheet = document.getElementById("boxes_per_sheet");
 	var tabSheetSize = document.getElementById("sheet_size");
@@ -56,10 +57,11 @@ function swapImage(){
 			hiddenValve.style.display = "none";
 			hiddenGlue.setAttribute("tabindex", 5);
 			hiddenValve.setAttribute("tabindex", "");
-			tabSheetPrice.setAttribute("tabindex", 6);
+			sendBoxParams_button.setAttribute("tabindex", 6);
+			/*tabSheetPrice.setAttribute("tabindex", 6);
 			tabBoxesPerSheet.setAttribute("tabindex", 7);
 			tabSheetSize.setAttribute("tabindex", 8);
-			tabCartonType.setAttribute("tabindex", 9);
+			tabCartonType.setAttribute("tabindex", 9);*/
 		}
 		//Show both Gluing and Valve fields
 		else if (dropd.value == "0210" || dropd.value == "0215") {
@@ -69,10 +71,11 @@ function swapImage(){
 			hiddenValve.style.width = "30%";
 			hiddenGlue.setAttribute("tabindex", 5);
 			hiddenValve.setAttribute("tabindex", 6);
-			tabSheetPrice.setAttribute("tabindex", 7);
+			sendBoxParams_button.setAttribute("tabindex", 7);
+			/*tabSheetPrice.setAttribute("tabindex", 7);
 			tabBoxesPerSheet.setAttribute("tabindex", 8);
 			tabSheetSize.setAttribute("tabindex", 9);
-			tabCartonType.setAttribute("tabindex", 10);
+			tabCartonType.setAttribute("tabindex", 10);*/
 		}
 		
 	}
@@ -82,10 +85,11 @@ function swapImage(){
 		hiddenValve.style.display = "none";
 		hiddenGlue.setAttribute("tabindex", "");
 		hiddenValve.setAttribute("tabindex", "");
-		tabSheetPrice.setAttribute("tabindex", 5);
+		sendBoxParams_button.setAttribute("tabindex", 5);
+		/*tabSheetPrice.setAttribute("tabindex", 5);
 		tabBoxesPerSheet.setAttribute("tabindex", 6);
 		tabSheetSize.setAttribute("tabindex", 7);
-		tabCartonType.setAttribute("tabindex", 8);
+		tabCartonType.setAttribute("tabindex", 8);*/
 	}
 };
 //Submitting box parameters
